@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function cozinhar ()
+        {
+console.log(this.ingrediente)
+        }
+        let jantar = { ingrediente: "Arroz" }
+        let acao = cozinhar.bind(jantar)
+        acao()
+        //-------------------------------------
+        let calc = function()
+        {
+            return{ soma: this.soma, 
+                    multiplicar: this.multiplicar,
+                    dividir: this.dividir,
+                    subtrair: this.subtrair }
+        }
+        let methods = {
+            soma: function(x, y)
+            {
+                return x + y
+            },
+            multiplicar: function(x, y)
+            {
+                return x * y
+            },
+            dividir: function(x, y)
+            {
+                return x / y
+            },
+            subtrair: function(x, y)
+            {
+                return x - y
+            }
+        }
+        calculoBind = calc.bind(methods)
+        console.log(calculoBind().soma(2,2))
+        console.log(calculoBind().multiplicar(2,10))
+        console.log(calculoBind().dividir(30,2))
+        console.log(calculoBind().subtrair(70,3))
+    </script>
+</body>
+</html>

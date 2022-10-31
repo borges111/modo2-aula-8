@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio aula 8</title>
+</head>
+<body>
+    <script>
+class Anotacoes{
+            constructor(titulo, nome)
+            {
+                this.titulo = titulo
+                this.nome = nome
+            }
+        }
+        var x = new Anotacoes(5, 5)
+        try {
+            if(isNaN(x) === true)
+            {
+                throw new Error("Dados Inválidos!!")
+            }else{
+                console.log(x)
+            }
+        } catch (err) {
+            window.alert(err.message)
+        }
+
+        var valor1 = 5
+        var valor2 = "Texto"
+        document.write(isNaN(valor1)+"<br>")
+        document.write(isNaN(valor2))
+    </script>
+</body>
+</html>
